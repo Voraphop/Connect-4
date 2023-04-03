@@ -1,0 +1,11 @@
+/Users/nellvoraphop/Downloads/Connct4/target/release/deps/ppv_lite86-c1a7c2925f5021b0.rmeta: /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/lib.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/soft.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/types.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/x86_64/mod.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/x86_64/sse2.rs
+
+/Users/nellvoraphop/Downloads/Connct4/target/release/deps/libppv_lite86-c1a7c2925f5021b0.rlib: /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/lib.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/soft.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/types.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/x86_64/mod.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/x86_64/sse2.rs
+
+/Users/nellvoraphop/Downloads/Connct4/target/release/deps/ppv_lite86-c1a7c2925f5021b0.d: /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/lib.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/soft.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/types.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/x86_64/mod.rs /Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/x86_64/sse2.rs
+
+/Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/lib.rs:
+/Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/soft.rs:
+/Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/types.rs:
+/Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/x86_64/mod.rs:
+/Users/nellvoraphop/.cargo/registry/src/github.com-1ecc6299db9ec823/ppv-lite86-0.2.17/src/x86_64/sse2.rs:
