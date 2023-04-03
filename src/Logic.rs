@@ -66,7 +66,7 @@ fn logic() {
                     break;
                 }
                 let start_time = Instant::now();
-                let bot = minimax(&mut board_vec, level as i32, -1000000, 1000000, false);
+                let bot = minimax(&mut board_vec, level as i32, false);
                 let best_move = bot.0;
                 let score = bot.1;
                 fill(&mut board_vec, best_move.unwrap(), 'O');
@@ -357,7 +357,7 @@ fn evaluate_sequence(sequence: &Vec<char>) -> i32 {
     score
 }
 
-fn minimax(board: &mut Vec<char>, depth: i32, alpha: i32, beta: i32, maximizing_player: bool) -> (Option<usize>, i32) {
+fn minimax(board: &mut Vec<char>, depth: i32, maximizing_player: bool) -> (Option<usize>, i32) {
 
     if depth == 0 || is_game_over(board) {
         return (None, evaluate_board(board));
@@ -372,12 +372,8 @@ fn minimax(board: &mut Vec<char>, depth: i32, alpha: i32, beta: i32, maximizing_
             .map(|&col| {
                 let mut copy_board = board.clone();
                 fill(&mut copy_board, col, 'X');
-                let current_eval = minimax(&mut copy_board, depth - 1, alpha, beta, false).1;
+                let current_eval = minimax(&mut copy_board, depth - 1, false).1;
                 remove(&mut copy_board, col as i32);
-                alpha.max(current_eval);
-                if alpha >= beta {
-                    return (col, current_eval);
-                }
                 (col, current_eval)
             })
             .reduce(
@@ -399,12 +395,8 @@ fn minimax(board: &mut Vec<char>, depth: i32, alpha: i32, beta: i32, maximizing_
             .map(|&col| {
                 let mut copy_board = board.clone();
                 fill(&mut copy_board, col, 'O');
-                let current_eval = minimax(&mut copy_board, depth - 1, alpha, beta, true).1;
+                let current_eval = minimax(&mut copy_board, depth - 1, true).1;
                 remove(&mut copy_board, col as i32);
-                beta.min(current_eval);
-                if beta <= alpha {
-                    return (col, current_eval);
-                }
                 (col, current_eval)
             })
             .reduce(
@@ -423,7 +415,7 @@ fn minimax(board: &mut Vec<char>, depth: i32, alpha: i32, beta: i32, maximizing_
     }
 }
 
-fn nor_minimax(board: &mut Vec<char>, depth: i32, alpha: i32, beta: i32, maximizing_player: bool) -> (Option<usize>, i32) {
+fn nor_minimax(board: &mut Vec<char>, depth: i32, maximizing_player: bool) -> (Option<usize>, i32) {
 
     if depth == 0 || is_game_over(board) {
         return (None, evaluate_board(board));
@@ -437,14 +429,10 @@ fn nor_minimax(board: &mut Vec<char>, depth: i32, alpha: i32, beta: i32, maximiz
         for &col in &moves {
             let mut copy_board = board.clone();
             fill(&mut copy_board, col, 'X');
-            let current_eval = nor_minimax(&mut copy_board, depth - 1, alpha, beta, false).1;
+            let current_eval = nor_minimax(&mut copy_board, depth - 1, false).1;
             remove(&mut copy_board, col as i32);
             if current_eval > max_eval.1 {
                 max_eval = (col, current_eval);
-            }
-            alpha.max(current_eval);
-            if alpha >= beta {
-                break;
             }
         }
         best_move = max_eval.0;
@@ -454,14 +442,10 @@ fn nor_minimax(board: &mut Vec<char>, depth: i32, alpha: i32, beta: i32, maximiz
         for &col in &moves {
             let mut copy_board = board.clone();
             fill(&mut copy_board, col, 'O');
-            let current_eval = nor_minimax(&mut copy_board, depth - 1, alpha, beta, true).1;
+            let current_eval = nor_minimax(&mut copy_board, depth - 1, true).1;
             remove(&mut copy_board, col as i32);
             if current_eval < min_eval.1 {
                 min_eval = (col, current_eval);
-            }
-            beta.min(current_eval);
-            if beta <= alpha {
-                break;
             }
         }
         best_move = min_eval.0;
